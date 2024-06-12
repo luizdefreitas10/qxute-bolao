@@ -1,5 +1,6 @@
 import { Button } from '@nextui-org/react'
 import { Open_Sans as OpenSans } from 'next/font/google'
+import Link from 'next/link'
 
 const fontOpenSans = OpenSans({ subsets: ['latin'] })
 
@@ -13,6 +14,8 @@ export default function HowItWorks() {
       </h1>
       <div className="mx-auto w-[85%] flex flex-col justify-center items-center space-y-4">
         <Button
+          as={Link}
+          href="/login"
           className={`bg-[#1F67CE] text-[12px] font-bold text-white py-3 px-6 ${fontOpenSans.className}`}
         >
           PASSO 1

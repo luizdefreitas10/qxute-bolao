@@ -12,16 +12,18 @@ import {
 
 export default function App() {
   const menuItems = [
-    'Profile',
-    'Dashboard',
-    'Activity',
-    'Analytics',
-    'System',
-    'Deployments',
-    'My Settings',
-    'Team Settings',
-    'Help & Feedback',
-    'Log Out',
+    {
+      menuItem: 'Home',
+      route: '/',
+    },
+    {
+      menuItem: 'Login',
+      route: '/login',
+    },
+    {
+      menuItem: 'Recuperar senha',
+      route: '/recover-password',
+    },
   ]
 
   return (
@@ -30,9 +32,11 @@ export default function App() {
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarContent className="pr-3">
+      <NavbarContent className="pr-16">
         <NavbarBrand>
-          <Image src="/qxutelogo.png" alt="qxute logo" />
+          <Link className="cursor-pointer" href="/">
+            <Image src="/qxutelogo.png" alt="qxute logo" />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -48,10 +52,10 @@ export default function App() {
                     ? 'danger'
                     : 'foreground'
               }
-              href="#"
+              href={item.route.toLowerCase()}
               size="lg"
             >
-              {item}
+              {item.menuItem}
             </Link>
           </NavbarMenuItem>
         ))}

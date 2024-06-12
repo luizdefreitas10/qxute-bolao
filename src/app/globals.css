@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+.custom-radio-order {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
