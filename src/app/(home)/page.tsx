@@ -7,7 +7,7 @@ import BetVipBanner from '../components/BetVipBanner/BetVipBanner'
 
 export default function Home() {
   return (
-    <main className={`bg-blue-400 w-full h-full pb-32`}>
+    <main className={`w-full h-full flex flex-col justify-around`}>
       <Swiper />
       <CarrosselBetVip />
       <HowItWorks />

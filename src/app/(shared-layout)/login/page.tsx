@@ -14,7 +14,7 @@ export default function Login() {
   const toggleVisibility = () => setIsVisible(!isVisible)
 
   return (
-    <div className="h-screen -mb-[148px] w-screen bg-[#1F67CE] flex flex-col">
+    <div className="h-full w-screen bg-[#1F67CE] flex flex-col">
       <h1
         className={`${fontOpenSans.className} mt-10 text-center text-[18px] font-bold text-white`}
       >

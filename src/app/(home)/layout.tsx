@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Open_Sans as OpenSans } from 'next/font/google'
 import '../globals.css'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = OpenSans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Bolão QXUTE + BETVIP - Home',
@@ -17,13 +17,12 @@ export default function HomeLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={`${inter.className} flex flex-col items-center`}>
+    <div className={`${openSans.className}`}>
       <Header />
-      <div className="h-full w-full bg-white flex justify-center items-center">
+      <div className="bg-white-texture h-full w-full bg-white flex justify-center items-center mb-32">
         {children}
       </div>
       <Footer />
     </div>
   )
 }
-// -mb-[210px]

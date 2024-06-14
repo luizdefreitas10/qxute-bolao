@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Open_Sans as OpenSans } from 'next/font/google'
 import '../globals.css'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = OpenSans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Bolão QXUTE + BETVIP - Login',
@@ -17,9 +17,16 @@ export default function LoginLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={`${inter.className} flex flex-col items-center`}>
+    <div className={`${openSans.className} flex flex-col items-center `}>
       <Header />
-      <div className="h-screen w-full -mb-[210px]">{children}</div>
+      <div
+        className="w-full overflow-auto"
+        style={{
+          height: 'calc(100vh - 200px)',
+        }}
+      >
+        {children}
+      </div>
       <Footer />
     </div>
   )

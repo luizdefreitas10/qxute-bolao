@@ -37,3 +37,10 @@ body {
   flex-direction: row-reverse;
   align-items: center;
 }
+
+.bg-white-texture {
+  background-image: url("/whitetexture.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
