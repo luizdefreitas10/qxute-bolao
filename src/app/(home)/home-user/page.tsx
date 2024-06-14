@@ -1,6 +1,7 @@
 'use client'
 
 import MyHistoryModal from '@/app/components/MyHistoryModal/MyHistoryModal'
+import useWindowWidth from '@/utils/window-width-hook'
 import {
   Button,
   Image,
@@ -14,6 +15,9 @@ const fontOpenSans = OpenSans({ subsets: ['latin'] })
 
 export default function HomeUser() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
+
+  const windowWidth = useWindowWidth()
+  const isMobile = windowWidth && windowWidth < 640
 
   const players = [
     {
@@ -36,7 +40,7 @@ export default function HomeUser() {
 
   return (
     <div
-      className={`flex flex-col mx-auto w-[100%] h-full bg-white ${fontOpenSans.className}`}
+      className={`flex flex-col mx-auto w-[100%] h-full bg-white-texture ${fontOpenSans.className}`}
     >
       <h1
         className={`text-center text-[#00409F] text-[18px] font-bold ${fontOpenSans.className} mt-10`}
@@ -59,6 +63,7 @@ export default function HomeUser() {
             <h1 className="text-center">Ceará</h1>
             <div className="flex justify-center items-center">
               <Button
+                size={isMobile ? 'sm' : 'md'}
                 variant="bordered"
                 className="text-white border-solid border-[1px] border-white bg-[#00409F]"
               >
@@ -66,6 +71,7 @@ export default function HomeUser() {
               </Button>
               <h1 className="mx-3 text-[16px text-white]">0</h1>
               <Button
+                size={isMobile ? 'sm' : 'md'}
                 variant="bordered"
                 className="text-white border-solid border-[1px] border-white bg-[#00409F]"
               >
@@ -78,6 +84,7 @@ export default function HomeUser() {
             <h1 className="text-center">Sport</h1>
             <div className="flex justify-center items-center">
               <Button
+                size={isMobile ? 'sm' : 'md'}
                 variant="bordered"
                 className="text-white border-solid border-[1px] border-white bg-[#00409F]"
               >
@@ -85,6 +92,7 @@ export default function HomeUser() {
               </Button>
               <h1 className="mx-3 text-[16px text-white]">0</h1>
               <Button
+                size={isMobile ? 'sm' : 'md'}
                 variant="bordered"
                 className="text-white border-solid border-[1px] border-white bg-[#00409F]"
               >
@@ -134,6 +142,7 @@ export default function HomeUser() {
                 <h1 className="">{player.name}</h1>
               </div>
               <Radio
+                color="success"
                 className="custom-radio-order justify-between"
                 value={`Jogador ${index + 1}`}
                 classNames={{

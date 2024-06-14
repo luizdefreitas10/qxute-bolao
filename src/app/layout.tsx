@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className=" overflow-x-hidden">
+      <body className="overflow-x-hidden">
         <Providers>{children}</Providers>
         <Suspense fallback={<Loading />} />
       </body>
